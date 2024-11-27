@@ -10,9 +10,9 @@ int main() {
     W.create(sf::VideoMode(800, 800), "ddd");
     W.setFramerateLimit(30);
 
-    AttractorParams par;
-    par.start = LVec3(10, 10, 10.0001);
-    Trace lor, lor1(par);
+    AttractorParams par2;
+    par2.start = LVec3(10, 10, 10.0001);
+    Trace lor1, lor2(par2);
 
     while (W.isOpen()) {
         sf::Event ev;
@@ -20,10 +20,10 @@ int main() {
             handle_events(ev);
 
         W.clear(sf::Color::Black);
-        lor.step();
-        lor.draw(W);
         lor1.step();
         lor1.draw(W);
+        lor2.step();
+        lor2.draw(W);
         W.display();
     }
 
