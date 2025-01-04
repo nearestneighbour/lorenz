@@ -33,6 +33,7 @@ void Params::load(std::string fname) {
         { "SIGMA", [](const std::string& s, Params* t) { t->sigma    = std::stod(s); } },
         { "RHO",   [](const std::string& s, Params* t) { t->rho      = std::stod(s); } },
         { "BETA",  [](const std::string& s, Params* t) { t->beta     = std::stod(s); } },
+        { "MAXN",  [](const std::string& s, Params* t) { t->maxn     = std::stoi(s); } },
         { "STARTX",[](const std::string& s, Params* t) { t->start.x  = std::stod(s); } },
         { "STARTY",[](const std::string& s, Params* t) { t->start.y  = std::stod(s); } },
         { "STARTZ",[](const std::string& s, Params* t) { t->start.z  = std::stod(s); } },

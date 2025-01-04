@@ -10,9 +10,9 @@ typedef sf::Vector3<float> LVec3;
 
 struct Params {
     enum class Dims {XY, XZ, YZ} dims{Dims::YZ};
+    float dt = 0.01, sigma = 10, rho = 28, beta = 8/3, rot = 0;
+    unsigned long maxn = 400;
     LVec3 start, origin;
-    float dt = 0.01, sigma = 10, rho = 28, beta = 8/3, rot = 0.01;
-    //float sx = 10, sy = 10, sz = 10, ox = 0, oy = 0, oz = 0;
 
     Params();
     Params(std::string);

@@ -11,7 +11,6 @@ typedef sf::Vector3<float> LVec3;
 class Lorenz {
     const Params par;
     std::list<LVec3> dots;
-    const unsigned int N = 400; // should be part of Params
     LVec3 pos;
 
     LVec3 iterate();

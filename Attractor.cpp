@@ -30,7 +30,7 @@ void Lorenz::rotate(LVec3 ax, float a) {
 
 void Lorenz::step() {
     dots.push_back(iterate());
-    if (dots.size() > N)
+    if (dots.size() > par.maxn)
         dots.pop_front();
     if (par.rot > 0)
         rotate(LVec3(0,0,1), par.rot);
