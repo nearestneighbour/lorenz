@@ -1,6 +1,6 @@
 #include <SFML/Graphics.hpp>
+#include "Params.hpp"
 #include "Attractor.hpp"
-#include "Trace.hpp"
 
 void handle_events(sf::Event&);
 sf::RenderWindow W;
@@ -10,9 +10,7 @@ int main() {
     W.create(sf::VideoMode(800, 800), "ddd");
     W.setFramerateLimit(30);
 
-    AttractorParams par2;
-    par2.start = LVec3(10, 10, 10.0001);
-    Trace lor1, lor2(par2);
+    Lorenz lor1("config/default.conf"), lor2("config/default1.conf");
 
     while (W.isOpen()) {
         sf::Event ev;

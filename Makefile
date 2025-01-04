@@ -8,7 +8,7 @@ CXXFLAGS = -Wall -Wextra
 LDFLAGS = -lsfml-system -lsfml-graphics -lsfml-window
 
 # Source files
-SRCS = main.cpp Attractor.cpp Trace.cpp
+SRCS = main.cpp Attractor.cpp Params.cpp
 
 # Object files
 OBJS = $(addprefix build/, $(SRCS:.cpp=.o))
