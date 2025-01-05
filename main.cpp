@@ -10,7 +10,7 @@ int main() {
     W.create(sf::VideoMode(800, 800), "ddd");
     W.setFramerateLimit(30);
 
-    Lorenz lor, lor1("config/test.conf");
+    Lorenz L;
 
     while (W.isOpen()) {
         sf::Event ev;
@@ -18,10 +18,8 @@ int main() {
             handle_events(ev);
 
         W.clear(sf::Color::Black);
-        lor.step();
-        lor.draw(W);
-        lor1.step();
-        lor1.draw(W);
+        L.step();
+        L.draw(W);
         W.display();
     }
 

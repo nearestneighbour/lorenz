@@ -13,6 +13,7 @@ struct Params {
     float dt = 0.01, sigma = 10, rho = 28, beta = 8/3, rot = 0;
     unsigned long maxn = 400;
     LVec3 start, origin;
+    sf::Color color = sf::Color::White;
 
     Params();
     Params(std::string);

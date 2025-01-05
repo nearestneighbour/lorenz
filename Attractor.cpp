@@ -43,6 +43,7 @@ void Lorenz::draw(sf::RenderWindow& w) {
     int i = 0;
     for (LVec3 d : dots) {
         line[i].position = scale * par.normalize(d);
+        line[i].color = par.color;
         //std::cout << line[i].position.x << " " << line[i].position.y << std::endl;
         //std::cout << d.x << " " << d.y << std::endl;
         i++;
