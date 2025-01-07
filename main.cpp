@@ -1,3 +1,4 @@
+#include <vector>
 #include <SFML/Graphics.hpp>
 #include "Params.hpp"
 #include "Attractor.hpp"
@@ -5,12 +6,19 @@
 void handle_events(sf::Event&);
 sf::RenderWindow W;
 
-int main() {
+int main(int argc, char* argv[]) {
 
     W.create(sf::VideoMode(800, 800), "ddd");
     W.setFramerateLimit(30);
 
-    Lorenz L;
+    std::vector<Lorenz> L;
+    if (argc > 1) {
+        for (int i=1; i<argc; i++) {
+            L.push_back(Lorenz(argv[i]));
+        }
+    } else {
+        L.push_back(Lorenz());
+    }
 
     while (W.isOpen()) {
         sf::Event ev;
@@ -18,8 +26,10 @@ int main() {
             handle_events(ev);
 
         W.clear(sf::Color::Black);
-        L.step();
-        L.draw(W);
+        for (Lorenz& l : L) {
+            l.step();
+            l.draw(W);
+        }
         W.display();
     }
 
